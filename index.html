@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Taller TypeScript 2</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row" style="background-color:darkcyan" id="label">
+                <div class="col-1"></div>
+                <div class="col-9">
+                    <h3>TV Series</h3>
+                </div>
+                <div class="col"></div>
+            </div>
+            <br>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col">
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Channel</th>
+                                <th scope="col">Seasons</th>
+                            </tr>
+                        </thead>
+                        <tbody id="series"></tbody>
+                    </table>
+                    <div class="container-fluid">
+                        <p id="promedio"></p>
+                    </div>
+                </div>
+                <div class="col" id="detail">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="https://i.imgur.com/GGje0vc.jpg" alt="Poster serie"/>
+                        <div class="card-body">
+                          <h5 class="card-title">Breaking Bad</h5>
+                          <p class="card-text">Set and filmed in Albuquerque, New Mexico, the series tells the story of Walter White, a struggling and depressed high school chemistry teacher who is diagnosed with lung cancer</p>
+                          <a href="https://www.amc.com/shows/breaking-bad" target="_blank">https://www.amc.com/shows/breaking-bad</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <script type="module" src="./scripts/Serie.js"></script>
+        <script type="module" src="./scripts/data.js"></script>
+        <script type="module" src="./scripts/main.js"></script>
+
+        <script>
+            function crearPlantilla(nombre,poster,description,webpage){
+                let seriesDetail = document.getElementById("detail");
+                seriesDetail.innerHTML = `
+                            <div class="card" style="width: 18rem;">
+                                <img class="card-img-top" src="${poster}" alt="Poster serie"/>
+                                <div class="card-body">
+                                    <h5 class="card-title">${nombre}</h5>
+                                    <p class="card-text">${description}</p>
+                                    <a href="${webpage}" target="_blank">${webpage}</a>
+                                </div>
+                            </div>`;
+            }
+        </script>
+    </body>
+</html>
